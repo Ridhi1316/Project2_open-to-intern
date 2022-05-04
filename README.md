@@ -1,5 +1,11 @@
 # Project2_open-to-intern
 
+FunctionUp Project - 2 Uranium Batch Group 86
+
+Team Members - Ridhi Arora and Surojit Piri
+
+------------- FINAL CODE FOR THE PROJECT ---------------------
+
 # Open to Intern Project Requirement
 ## Key points
 Create a group database groupXDatabase. You can clean the db you previously used and resue that.

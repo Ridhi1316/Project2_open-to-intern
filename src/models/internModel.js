@@ -1,29 +1,32 @@
-const mongoose = require("mongoose");
-const validator = require("validator");
-const ObjectId=mongoose.Schema.type.ObjectId;
+const mongoose = require('mongoose')
 
-const internModel = new mongoose.Schema(
-  {
-    name: { type: String, required: true,trim:true },
-    email: { type: String, unique: true, validate:{
-      validator: validator.isEmail,
-      message: `${VALUE} is not a valid email`,
-      isAsync: false
-    }},
-    mobile: { type: Number,unique:true ,required: true, validate:{
-      validator: validator.mobile,
-      message: `${VALUE} is not a valid mobile`,
-      isAsync: false
-    }},
-    collegeId:{
-      type:ObjectId,ref:"college"
+const internSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: 'name is required',
+        trim: true
     },
-    isDeleted: { type: Boolean, default: false },
-  },
-  { timestamps: true }
-);
-
-module.exports = mongoose.model("intern", internModel);
-
-/*{ name: {mandatory}, email: {mandatory, valid email, unique}, 
-mobile: {mandatory, valid mobile number, unique}, collegeId: {ObjectId, ref to college model, isDeleted: {boolean, default: false}} */
+    email: {
+        type: String,
+        trim: true,
+        lowercase: true,
+        unique: true,
+        required: 'Email address is required',
+        lowercase: true
+    },
+    mobile: {
+        type: String,
+        required: 'mobile number is required',
+        unique: true
+    },
+    collegeId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'College',
+        required: 'college id is required',
+    },
+    isDeleted: {
+        type: Boolean,
+        default: false
+    }
+}, { timestamps: true })
+module.exports = mongoose.model('intern', internSchema)
