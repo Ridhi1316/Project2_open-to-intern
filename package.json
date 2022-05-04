@@ -1,0 +1,22 @@
+{
+  "name": "project2_open-to-intern",
+  "version": "1.0.0",
+  "description": "package-json",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surojit12/Project2_open-to-intern.git"
+  },
+  "author": "Surojit, Ridhi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/surojit12/Project2_open-to-intern/issues"
+  },
+  "homepage": "https://github.com/surojit12/Project2_open-to-intern#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
