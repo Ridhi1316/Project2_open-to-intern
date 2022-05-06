@@ -1,5 +1,6 @@
 const collegeModel = require("../models/collegeModel")
 const internModel = require("../models/internModel")
+var validUrl = require('valid-url');
 // ==========================================================================================================================================>
 
 // globelly function for validate user entry
@@ -44,6 +45,8 @@ const collegeCreate = async function (req, res) {
             res.status(400).send({ status: false, message: 'logo link is required' })
             return
         }
+        if (!validUrl.isUri(requestBody.logoLink))
+        return res.status(400).send({ status: false, message: 'logo link is Invalid' })
 
         // unique validation  >
 

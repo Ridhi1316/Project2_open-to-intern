@@ -92,7 +92,7 @@ const internCreate = async function (req, res) {
 
         req.body.collegeId=collegeId._id
      const internCreate = await internModel.create(requestBody)
-     res.status(200).send({ status: true, data: internCreate })
+     res.status(201).send({ status: true, data: internCreate })
 
     //  create data in intern second method
     // const createIntern = {
